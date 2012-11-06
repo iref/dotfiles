@@ -1,0 +1,12 @@
+[user]
+	name = Jan Ferko
+    email = julyloov@gmail.com
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = true
+[mergetool]
+    keepBackup = true
+[core]
+    editor = vim
