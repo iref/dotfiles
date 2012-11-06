@@ -1,0 +1,4 @@
+vimdotfiles
+===========
+
+My VIM configuration
