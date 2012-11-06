@@ -19,6 +19,9 @@ set expandtab
 set t_Co=16
 
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
+"Clojure specific settings"
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
