@@ -20,9 +20,9 @@ set ignorecase " search ignoring case
 set nu " Line numbers
 set lbr " linebreak
 
-" Spaces instead of tabs
-set shiftwidth=4
-set tabstop=4
+" Spaces instead of tabs (for scala and clojure 2 is enought)
+set shiftwidth=2
+set tabstop=2
 set expandtab
 
 "Color setup"
