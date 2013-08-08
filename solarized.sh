@@ -41,7 +41,7 @@ echo ""
 cp solarized-dircolors/dircolors.ansi-universal $HOME/.dircolors
 
 echo "" >> $HOME/.profile
-echo 'eval `dircolors $HOME/.dircolors' >> $HOME/.profile
+echo 'eval `dircolors $HOME/.dircolors`' >> $HOME/.profile
 
 echo ""
 echo " + Dircolors for Solarized were installed."
