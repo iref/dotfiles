@@ -24,7 +24,7 @@ then
   mkdir $HOME/.vim
 fi
 
-cp -r vim/ $HOME/.vim
+cp -r vim/* $HOME/.vim
 
 echo " + vim plugins copied..."
 echo ""
@@ -32,7 +32,7 @@ echo ""
 echo "Installing solarized theme for gnome terminal..."
 echo ""
 
-sh solarized.sh
+sh ./script/solarized.sh
 
 echo " + Solarized installed"
 echo ""
