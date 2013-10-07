@@ -35,3 +35,6 @@ colorscheme solarized
 "Clojure specific settings"
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
+
+" Key Mappings
+map <C-n> :NERDTreeToggle
