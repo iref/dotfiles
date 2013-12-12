@@ -7,6 +7,21 @@ cp gitconfig $HOME/.gitconfig
 echo ""
 echo " + gitconfig installed."
 
+if test $(which rake)
+  echo "Cloning Hub repo for your Git.."
+  echo ""
+
+  git clone git://github.com/github/hub.git
+  cd hub
+
+  echo "Running 'sudo rake install' to install Hub"
+  sudo rake install
+  
+  cd ..
+  rm -rf hub
+
+  echo 'eval "$(hub alias -s)"' >> ~/.profile
+fi
 
 echo "Copying vimrc..."
 echo ""
