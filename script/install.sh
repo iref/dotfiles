@@ -8,6 +8,7 @@ echo ""
 echo " + gitconfig installed."
 
 if test $(which rake)
+then
   echo "Cloning Hub repo for your Git.."
   echo ""
 
@@ -63,7 +64,7 @@ then
   echo "Installing vim-ruby"
   ruby vim-ruby/bin/vim-ruby-install.rb
   echo ""
-  if [ $? != 0 ]
+  if [ $? == 0 ]
   then
     echo " + Vim-ruby plugin was installed"
   else
@@ -76,5 +77,3 @@ then
 fi
 
 echo "Good Job! Your vimdotfiles are set now"
-
-
