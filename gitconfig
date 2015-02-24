@@ -1,6 +1,6 @@
 [user]
-	name = Jan Ferko
-	email = julyloov@gmail.com
+    name = Jan Ferko
+    email = julyloov@gmail.com
 [color]
     branch = auto
     diff = auto
@@ -10,9 +10,9 @@
     keepBackup = true
 [core]
     editor = vim
-	autocrlf = input
+    autocrlf = input
 [ui]
-	color = true
+    color = true
 [alias]
-	s = status -s
-	lg = log --oneline --decorate --all --graph
+    s = status -s
+    lg = log --oneline --decorate --all --graph
