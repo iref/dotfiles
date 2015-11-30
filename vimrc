@@ -6,13 +6,9 @@ filetype indent on
 filetype on
 filetype plugin indent on
 
-"Classic Vim setup"
-set autoindent
-set smartindent
 
 " Some useful settings
 set cmdheight=2 "command bar is 2 high"
-set backspace=indent,eol,start
 set hlsearch "highlight search
 set incsearch " search incrementally
 set ignorecase " search ignoring case
@@ -27,12 +23,9 @@ set tabstop=2
 set expandtab
 set nowrap
 
-"Color setup"
-set t_Co=16
-
 syntax enable
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme solarized 
 
 " Key Mappings
 let mapleader=","
