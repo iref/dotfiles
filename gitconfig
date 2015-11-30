@@ -1,6 +1,6 @@
 [user]
     name = Jan Ferko
-    email = julyloov@gmail.com
+  	email = julyloov@gmail.com
 [color]
     branch = auto
     diff = auto
@@ -16,3 +16,6 @@
 [alias]
     s = status -s
     lg = log --oneline --decorate --all --graph
+  	ctags = !.git/hooks/ctags
+[init]
+	  templatedir = ~/.git_templates
