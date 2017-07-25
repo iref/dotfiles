@@ -7,16 +7,19 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'guns/vim-clojure-static'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-sensible'
-Plugin 'ensime/ensime-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rust-lang/rust.vim'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 
@@ -34,6 +37,7 @@ set ignorecase " search ignoring case
 set smartcase " ... unless they contain at least one capital letter
 
 set nu " Line numbers
+set relativenumber "Relative line numbers from current line
 set lbr " linebreak
 
 " Spaces instead of tabs (for scala, ruby and clojure 2 is enough)
@@ -43,17 +47,22 @@ set expandtab
 set nowrap
 
 syntax enable
-set background=dark
-colorscheme solarized 
+set background=light
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+" Vim airline theme
+set t_Co=256
+let g:airline_powerline_fonts=1
+let g:airline_theme='bubblegum'
 
 " Key Mappings
 let mapleader="<space>"
 let maplocalleader=","
 nnoremap <C-n> :NERDTreeToggle<cr>
 nnoremap <F5> :Autoformat<cr>
-
-au FileType scala nnoremap <localleader>t :EnTypeCheck<cr>
-au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
 
 " Easier navigation between split windows
 nnoremap <C-j> <C-w>j
@@ -64,10 +73,3 @@ nnoremap <C-l> <C-w>l
 " Clojure setup
 let g:rbpt_max = 16
 let g:paredit_mode=1
-
-" Scalafmt setup
-let g:formatdef_scalafmt = "'scalafmt'"
-let g:formatters_scala = ['scalafmt']
-
-" Ensime setup
-autocmd BufWritePost *.scala :EnTypeCheck
