@@ -44,12 +44,4 @@ sh ./script/solarized.sh
 echo " + Solarized installed"
 echo ""
 
-echo "Installing FZF search..."
-echo ""
-
-sh ./script/fzf.sh
-
-echo " + FZF installed"
-echo ""
-
 echo "Good Job! Your vimdotfiles are set now"

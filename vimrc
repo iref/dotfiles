@@ -1,4 +1,4 @@
-"Set up Vundle"
+"let up Vundle"
 set nocompatible
 filetype off
 
@@ -16,14 +16,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'guns/vim-clojure-static'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
-
-" FZF / Ctrlp for file navigation
-if executable('fzf')
-  Plug '/usr/local/opt/fzf'
-  Plug 'junegunn/fzf.vim'
-else
-  Plug 'ctrlpvim/ctrlp.vim'
-endif
+Plug 'slashmili/alchemist.vim'
 
 call plug#end()
 
@@ -80,12 +73,3 @@ let g:paredit_mode=1
 
 " deoplete
 let g:deoplete#enable_at_startup=1
-
-" FZF and tags
-let g:fzf_command_prefix = 'Fzf'
-if executable('fzf')
-  nnoremap <leader>p :FzfFiles<cr>
-  nnoremap <leader>u :FzfTags<cr>
-else
-  nnoremap <leader>p :Ctrlp<space><cr>
-endif
