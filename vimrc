@@ -2,26 +2,30 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin("~/.config/nvim/plugged")
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'guns/vim-clojure-static'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rust-lang/rust.vim'
-Plugin 'elixir-lang/vim-elixir'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'derekwyatt/vim-scala'
+Plug 'guns/vim-clojure-static'
+Plug 'rust-lang/rust.vim'
+Plug 'elixir-lang/vim-elixir'
 
-call vundle#end()
+" FZF / Ctrlp for file navigation
+if executable('fzf')
+  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf.vim'
+else
+  Plug 'ctrlpvim/ctrlp.vim'
+endif
+
+call plug#end()
 
 " Switch filetype detection on
 filetype indent on
@@ -47,7 +51,7 @@ set expandtab
 set nowrap
 
 syntax enable
-set background=light
+set background=dark
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -73,3 +77,15 @@ nnoremap <C-l> <C-w>l
 " Clojure setup
 let g:rbpt_max = 16
 let g:paredit_mode=1
+
+" deoplete
+let g:deoplete#enable_at_startup=1
+
+" FZF and tags
+let g:fzf_command_prefix = 'Fzf'
+if executable('fzf')
+  nnoremap <leader>p :FzfFiles<cr>
+  nnoremap <leader>u :FzfTags<cr>
+else
+  nnoremap <leader>p :Ctrlp<space><cr>
+endif
