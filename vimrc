@@ -12,11 +12,10 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'derekwyatt/vim-scala'
-Plug 'guns/vim-clojure-static'
-Plug 'rust-lang/rust.vim'
-Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'neomake/neomake'
 
 call plug#end()
 
@@ -73,3 +72,9 @@ let g:paredit_mode=1
 
 " deoplete
 let g:deoplete#enable_at_startup=1
+
+" Neomake
+autocmd! BufWritePost * Neomake
+
+" Gutentags
+let g:gutentags_cache_dir= '~/.tags_cache'

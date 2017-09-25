@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/zsh
 
 echo "Installing gitconfig..."
 echo ""
@@ -11,10 +10,9 @@ echo " + gitconfig installed."
 echo "Copying vimrc..."
 echo ""
 
-cp vimrc $HOME/.vimrc
 cp vimrc_background $HOME/.vimrc_background
 mkdir -p $HOME/.config/nvim
-ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+cp vimrc $HOME/.config/nvim/init.vim
 
 echo " + vimrc copied."
 echo ""
@@ -36,7 +34,7 @@ vim +PlugInstall +qall
 
 echo " + Vim plugins installed"
 
-echo "Installing solarized theme for gnome terminal..."
+echo "Setup terminal colorscheme..."
 echo ""
 
 sh ./script/solarized.sh
