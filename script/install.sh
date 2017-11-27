@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Exit if any subcommand fails
+set -e
+
 
 echo "Installing gitconfig..."
 echo ""
