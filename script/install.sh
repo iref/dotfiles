@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Stop if any subcommand fails
+set -e
+
 echo "Installing gitconfig..."
 echo ""
 cp gitconfig $HOME/.gitconfig
