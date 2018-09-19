@@ -1,28 +1,22 @@
-"Set up Vundle"
+"let up Plug"
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin("~/.config/nvim/plugged")
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'kien/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'guns/vim-clojure-static'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'neomake/neomake'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'sheerun/vim-polyglot'
+Plug 'neomake/neomake'
 
-call vundle#end()
+call plug#end()
 
 " Switch filetype detection on
 filetype indent on
@@ -38,6 +32,7 @@ set ignorecase " search ignoring case
 set smartcase " ... unless they contain at least one capital letter
 
 set nu " Line numbers
+set relativenumber "Relative line numbers from current line
 set lbr " linebreak
 
 " Spaces instead of tabs (for scala, ruby and clojure 2 is enough)
@@ -48,12 +43,15 @@ set nowrap
 
 syntax enable
 set background=dark
-colorscheme solarized
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " Vim airline theme
 set t_Co=256
 let g:airline_powerline_fonts=1
-let g:airline_theme='solarized'
+let g:airline_theme='bubblegum'
 
 " Key Mappings
 let mapleader="<space>"
@@ -74,3 +72,6 @@ let g:paredit_mode=1
 " Scalafmt setup
 let g:formatdef_scalafmt = "'scalafmt'"
 let g:formatters_scala = ['scalafmt']
+
+" Neomake
+autocmd! BufWritePost * Neomake

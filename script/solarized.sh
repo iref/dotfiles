@@ -1,6 +1,14 @@
-#!/bin/sh
+#!/bin/zsh
 
-echo "This script installs Solarized color theme to Gnome Terminal"
+function setup_base16() {
+  echo "Setting terminal config for $1"
+  echo "" >> $1
+  echo "BASE16_SHELL=$HOME/.config/base16-shell" >> $1
+  echo '[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"' >> $1
+  source $1
+}
+
+echo "This script installs Solarized color theme for Terminal"
 echo "So let's do this..."
 
 if test ! $(which git)
@@ -16,46 +24,18 @@ echo ""
 
 echo "Cloning needed GitHub repositories..."
 
-git clone git@github.com:sigurdga/gnome-terminal-colors-solarized.git solarized
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 echo ""
-echo " + Solarized for Gnome Terminal repo was cloned."
-
-git clone git@github.com:seebi/dircolors-solarized.git solarized-dircolors
+echo " + Base16 Shell repo was cloned."
 
 echo ""
-echo " + Dircolors for Solarized theme repo was cloned."
-echo ""
+echo " + Setting up Base16 Shell."
 
-echo "Installing Solarized theme"
+setup_base16 "$HOME/.zshrc"
 
-./solarized/install.sh
+echo "Running Base16-solarized-dark script"
 
-echo ""
-echo " + Solarized theme is installed."
-echo ""
-
-echo "Installing dircolors."
-echo ""
-
-cp solarized-dircolors/dircolors.ansi-universal $HOME/.dircolors
-
-echo "" >> $HOME/.profile
-echo 'eval `dircolors $HOME/.dircolors`' >> $HOME/.profile
-
-echo ""
-echo " + Dircolors for Solarized were installed."
-echo ""
-echo "Cleaning up"
-
-rm -rf solarized
-rm -rf solarized-dircolors
-
-echo ""
-echo " + Installation files are removed."
-echo ""
-echo "Refreshing terminal settings"
-
-. $HOME/.profile
+base16_solarized-dark
 
 echo "Good job! Solarized theme should be installed now!"
