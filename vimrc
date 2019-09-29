@@ -1,20 +1,29 @@
-"let up Plug"
+"let up Vundle"
 set nocompatible
 filetype off
 
 call plug#begin("~/.config/nvim/plugged")
 
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
-Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fireplace'
+
+Plug 'guns/vim-sexp'
+
+Plug 'kien/ctrlp.vim'
+Plug 'kien/rainbow_parentheses.vim'
+
+Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
+
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'sheerun/vim-polyglot'
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -69,9 +78,18 @@ nnoremap <C-l> <C-w>l
 let g:rbpt_max = 16
 let g:paredit_mode=1
 
-" Scalafmt setup
-let g:formatdef_scalafmt = "'scalafmt'"
-let g:formatters_scala = ['scalafmt']
+" Vim ale linters setup
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_text_changed = 0
 
-" Neomake
-autocmd! BufWritePost * Neomake
+" let b:ale_linters = { 'javascript': ['eslint', 'flow'] }
+
+" highlight clear ALEErrorSign
+" highlight clear ALEWarningSign
+" let g:ale_sign_error = 'X'
+" let g:ale_sign_warning = '?'
+" let g:ale_statusline_format = ['X %d', '? %d', '']
+" let g:ale_echo_msg_format = '%linter% says %s'
+
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>

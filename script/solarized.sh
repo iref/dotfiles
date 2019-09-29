@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-function setup_base16() {
+function setup_base16 () {
   echo "Setting terminal config for $1"
   echo "" >> $1
   echo "BASE16_SHELL=$HOME/.config/base16-shell" >> $1
