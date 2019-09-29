@@ -60,4 +60,9 @@ cp vimrc_background $HOME/.vimrc_background
 echo " + Solarized installed"
 echo ""
 
+echo " Setup asdf..."
+zsh ./script/asdf.sh > /dev/null
+echo " + asdf is configured"
+echo ""
+
 echo "Good Job! Your vimdotfiles are set now"
