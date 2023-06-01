@@ -1,15 +1,12 @@
-"let up Vundle"
 set nocompatible
 filetype off
 
 call plug#begin("~/.config/nvim/plugged")
 
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
-Plug 'chriskempson/base16-vim'
+Plug 'haishanh/night-owl.vim'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'slashmili/alchemist.vim'
@@ -40,12 +37,11 @@ set tabstop=2
 set expandtab
 set nowrap
 
-syntax enable
-set background=dark
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+if (has("termguicolors"))
+ set termguicolors
 endif
+syntax enable
+colorscheme night-owl
 
 " Key Mappings
 let mapleader="<space>"
