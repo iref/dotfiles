@@ -45,13 +45,17 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python gem lein mvn pip)
+plugins=(git python mvn pip zsh-syntax-highlighting)
 
 # User configuration
 
-ANDROID_HOME=$HOME/Development/android
-PATH="$HOME/.rbenv/bin:$ANDROID_HOME/tools:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
+
+### Add Homebrew to path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# Homebrew autocompletion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,57 +85,10 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias md5sum="md5"
 alias vim="nvim"
-alias kl="export KUBECONFIG=$HOME/.kube/config; kubectl"
 
-eval "$(rbenv init -)"
-
-### Added by the Heroku Toolbelt
- 
-PATH="/usr/local/heroku/bin:$PATH"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-### Android Studio (SDK) Setup for React Native
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
-
-export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-
-### Kube config for AWS
-export KUBECONFIG=~/.kube/config-dev-sg-all-apps
-
-### Move gradle cache to external disk
-if [ -d "/Volumes/Data/" ];
-then
-  export GRADLE_USER_HOME="/Volumes/Data/.gradle"
-else
-  export GRADLE_USER_HOME="$HOME/.gradle"
-fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/irerf/.sdkman"
-[[ -s "/Users/irerf/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/irerf/.sdkman/bin/sdkman-init.sh"
-
-BASE16_SHELL=/Users/irerf/.config/base16-shell
+BASE16_SHELL=/Users/iref/.config/base16-shell
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
-
-# Node.js config
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Rust config
-if [ -f "$HOME/.cargo/env" ]
-then
-   source "$HOME/.cargo/env"
-fi
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export PATH="$HOME/.fastlane/bin:$PATH"
