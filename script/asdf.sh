@@ -1,11 +1,8 @@
 #!/bin/zsh
 
-echo "Install asdf"
-echo ""
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+set -e
 
-echo " + asdf successfully installed"
-echo ""
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 
 asdf plugin-add java
 asdf plugin-add elixir 

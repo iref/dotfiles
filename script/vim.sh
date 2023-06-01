@@ -1,29 +1,18 @@
 #!/bin/zsh
 
-brew install nvim
+# Exit if any subcommand fails
+set -e
 
-echo "Copying vimrc..."
-echo ""
+brew install nvim
 
 mkdir -p $HOME/.config/nvim
 cp vimrc $HOME/.config/nvim/init.vim
 
-echo " + vimrc copied."
-echo ""
-
-echo "Installing vim-plug..."
-echo ""
-
+# Install vim-plug and vim plugins
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null
 
-
-echo "  + vim-plug installed"
-echo ""
-
-echo "Installing vim plugins..."
-echo ""
-
 nvim +PlugInstall +qall > /dev/null
 
-echo " + Vim plugins installed"
+# Copy vimrc_background
+cp vimrc_background $HOME/.vimrc_background
