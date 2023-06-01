@@ -16,6 +16,5 @@
 [alias]
     s = status -s
     lg = log --oneline --decorate --all --graph
-  	ctags = !.git/hooks/ctags
 [init]
     templatedir = ~/.git_templates
