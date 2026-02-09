@@ -3,16 +3,15 @@
 # Exit if any subcommand fails
 set -e
 
+# Install neovim
 brew install nvim
 
-mkdir -p $HOME/.config/nvim
-cp vimrc $HOME/.config/nvim/init.vim
+# Symlink nvim config
+mkdir -p $HOME/.config
+ln -sf $(pwd)/config/nvim $HOME/.config/nvim
 
-# Install vim-plug and vim plugins
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null
+# Create undo directory (referenced in set.lua)
+mkdir -p $HOME/.vim/undodir
 
-nvim +PlugInstall +qall > /dev/null
-
-# Copy vimrc_background
-cp vimrc_background $HOME/.vimrc_background
+# Install plugins (lazy.nvim bootstraps itself, just sync)
+nvim --headless "+Lazy! sync" +qa
