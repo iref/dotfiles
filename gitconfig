@@ -1,6 +1,7 @@
 [user]
     name = Jan Ferko
     email = julyloov@gmail.com
+	signingkey = 612C615DB1E674DD
 [color]
     branch = auto
     diff = auto
@@ -17,4 +18,7 @@
     s = status -s
     lg = log --oneline --decorate --all --graph
 [init]
-    templatedir = ~/.git_templates
+	defaultBranch = main
+[commit]
+	gpgsign = true
+

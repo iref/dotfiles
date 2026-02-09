@@ -12,6 +12,10 @@ zsh ./script/editors.sh
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/zsh_plugins.txt $HOME/.zsh_plugins.txt
 
+# Symlink git config
+ln -sf $(pwd)/gitconfig $HOME/.gitconfig
+ln -sf $(pwd)/gitconfig-ikigai $HOME/.gitconfig-ikigai
+
 # Symlink modern terminal configs
 mkdir -p $HOME/.config/ghostty
 mkdir -p $HOME/.config/atuin

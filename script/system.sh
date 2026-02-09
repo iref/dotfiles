@@ -21,7 +21,3 @@ brew install antidote fzf atuin starship zsh-autosuggestions zsh-syntax-highligh
 # Install Heroku Toolbelt
 brew tap heroku/brew && brew install heroku
 heroku autocomplete --refresh-cache
-
-# Configure git
-cp gitconfig $HOME/.gitconfig
-cp -r git_templates $HOME/.git_templates

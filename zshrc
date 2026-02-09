@@ -60,7 +60,7 @@ alias vim="nvim"
 GPG_TTY=$(tty)
 export GPG_TTY
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/iref/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 ## Flutter
@@ -69,7 +69,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
-export PATH=/Users/iref/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 export OPENROUTER_API_KEY="<your-openrouter-api-key>"
 
 # asdf shims (must be at end, after all PATH modifications)
