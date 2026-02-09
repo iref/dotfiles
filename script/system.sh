@@ -21,14 +21,6 @@ brew install antidote fzf atuin starship
 # Zsh plugin dependencies (used by antidote plugins)
 brew install zsh-autosuggestions zsh-syntax-highlighting bat
 
-# Install iterm2
-brew install --cask iterm2
-
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-cp ./zshrc $HOME/.zshrc && source $HOME/.zshrc
-
 # Install Heroku Toolbelt
 brew tap heroku/brew && brew install heroku
 heroku autocomplete --refresh-cache
