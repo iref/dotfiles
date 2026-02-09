@@ -1,7 +1,6 @@
 # --- MODERN STACK ---
 # asdf version manager (v0.16+)
 export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
-export PATH="${ASDF_DATA_DIR}/shims:$PATH"
 
 # Initialize the completion system (Required for TAB to work)
 # asdf completions
@@ -57,8 +56,6 @@ fi
 alias md5sum="md5"
 alias vim="nvim"
 
-#BASE16_SHELL=/Users/iref/.config/base16-shell
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 GPG_TTY=$(tty)
 export GPG_TTY
@@ -74,3 +71,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # opencode
 export PATH=/Users/iref/.opencode/bin:$PATH
 export OPENROUTER_API_KEY="<your-openrouter-api-key>"
+
+# asdf shims (must be at end, after all PATH modifications)
+export PATH="${ASDF_DATA_DIR}/shims:$PATH"
