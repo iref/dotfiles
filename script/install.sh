@@ -9,14 +9,14 @@ zsh ./script/vim.sh
 zsh ./script/editors.sh
 
 # Symlink zsh config
-ln -sf $(pwd)/zshrc $HOME/.zshrc
-ln -sf $(pwd)/zsh_plugins.txt $HOME/.zsh_plugins.txt
+ln -sf $(pwd)/config/zsh/zshrc $HOME/.zshrc
+ln -sf $(pwd)/config/zsh/plugins.txt $HOME/.zsh_plugins.txt
 
 # Symlink git config
-ln -sf $(pwd)/gitconfig $HOME/.gitconfig
-ln -sf $(pwd)/gitconfig-ikigai $HOME/.gitconfig-ikigai
+ln -sf $(pwd)/config/git/config $HOME/.gitconfig
+ln -sf $(pwd)/config/git/config-ikigai $HOME/.gitconfig-ikigai
 
-# Symlink modern terminal configs
+# Symlink terminal configs
 mkdir -p $HOME/.config/ghostty
 mkdir -p $HOME/.config/atuin
 ln -sf $(pwd)/config/ghostty/config $HOME/.config/ghostty/config
