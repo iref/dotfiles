@@ -6,5 +6,17 @@ set -e
 zsh ./script/system.sh
 zsh ./script/asdf.sh
 zsh ./script/vim.sh
+zsh ./script/editors.sh
+
+# Symlink zsh config
+ln -sf $(pwd)/zshrc $HOME/.zshrc
+ln -sf $(pwd)/zsh_plugins.txt $HOME/.zsh_plugins.txt
+
+# Symlink modern terminal configs
+mkdir -p $HOME/.config/ghostty
+mkdir -p $HOME/.config/atuin
+ln -sf $(pwd)/config/ghostty/config $HOME/.config/ghostty/config
+ln -sf $(pwd)/config/starship.toml $HOME/.config/starship.toml
+ln -sf $(pwd)/config/atuin/config.toml $HOME/.config/atuin/config.toml
 
 echo "Good Job! Your dotfiles are set now"

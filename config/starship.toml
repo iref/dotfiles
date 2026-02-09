@@ -1,0 +1,47 @@
+# Prompt format - show all info on single line
+format = """$character $directory$git_branch$git_status"""
+
+# Use a single blank line between prompts for clarity
+add_newline = true
+
+# The 'robbyrussell' style is: ➜ (green if success, red if failure) path (cyan) git_info
+
+# Configure the prompt character itself to be the arrow (➜) and use the right colors
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[➜](bold red) "
+
+# Configure the directory module to be cyan, matching the robbyrussell theme
+[directory]
+style = "bold cyan"
+truncation_length = 0 # Show full path, or change to 1 to show only current folder name
+
+# Configure the Git branch display
+[git_branch]
+# Put the literal 'git:()' inside the format string
+format = "[git:\\($branch\\)](bold blue) "
+
+# Configure the Git status display to match the robbyrussell symbols (✗)
+[git_status]
+# Map common symbols to be minimalistic and blue
+style = "bold yellow"
+# Clear the original formatting so we just see the symbols
+format = "[$all_status]($style) "
+
+# Disable modules you don't use to keep it minimal and fast
+[java]
+disabled = true
+[gradle]
+disabled = true
+[kotlin]
+disabled = true
+[nodejs]
+disabled = true 
+[python]
+disabled = true 
+[ruby]
+disabled = true
+[docker_context]
+disabled = true
+[package]
+disabled = true

@@ -12,7 +12,14 @@ softwareupdate --install-rosetta
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install cli tools
-brew install git wget curl jq nvim
+brew install git wget curl jq nvim httpie
+
+# Modern terminal stack
+brew install --cask ghostty
+brew install antidote fzf atuin starship
+
+# Zsh plugin dependencies (used by antidote plugins)
+brew install zsh-autosuggestions zsh-syntax-highlighting bat
 
 # Install iterm2
 brew install --cask iterm2

@@ -1,0 +1,5 @@
+# Execute command on enter, edit on tab
+enter_accept = true
+
+[sync]
+records = true
