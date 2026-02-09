@@ -16,10 +16,7 @@ brew install git wget curl jq nvim httpie
 
 # Modern terminal stack
 brew install --cask ghostty
-brew install antidote fzf atuin starship
-
-# Zsh plugin dependencies (used by antidote plugins)
-brew install zsh-autosuggestions zsh-syntax-highlighting bat
+brew install antidote fzf atuin starship zsh-autosuggestions zsh-syntax-highlighting bat
 
 # Install Heroku Toolbelt
 brew tap heroku/brew && brew install heroku

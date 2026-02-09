@@ -1,7 +1,11 @@
 # --- MODERN STACK ---
+# asdf version manager (v0.16+)
+export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+export PATH="${ASDF_DATA_DIR}/shims:$PATH"
+
 # Initialize the completion system (Required for TAB to work)
-# Add asdf completions to fpath (Homebrew path)
-fpath=($(brew --prefix asdf)/share/zsh/site-functions $fpath)
+# asdf completions
+fpath=(${ASDF_DATA_DIR}/completions $fpath)
 
 autoload -Uz compinit
 # Only regenerate completion cache once a day to keep it fast
@@ -55,11 +59,6 @@ alias vim="nvim"
 
 #BASE16_SHELL=/Users/iref/.config/base16-shell
 #[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-. $HOME/.asdf/asdf.sh
-
-# Set via zsh-plugin
-#. $HOME/.asdf/completions/asdf.bash
 
 GPG_TTY=$(tty)
 export GPG_TTY
