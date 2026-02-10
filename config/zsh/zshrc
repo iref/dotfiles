@@ -74,3 +74,8 @@ export OPENROUTER_API_KEY="<your-openrouter-api-key>"
 
 # asdf shims (must be at end, after all PATH modifications)
 export PATH="${ASDF_DATA_DIR}/shims:$PATH"
+
+# Source local config if it exists
+if [[ -f "$HOME/.env" ]]; then
+    source "$HOME/.env"
+fi
