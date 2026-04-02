@@ -2,6 +2,8 @@ theme = Night Owl
 font-family = "JetBrains Mono"
 font-size = 13
 font-thicken = true
+cursor-style = block
+cursor-style-blink = false
 
 # Window aesthetics
 window-padding-x = 12
@@ -9,11 +11,9 @@ window-padding-y = 12
 background-opacity = 0.95
 background-blur = 20
 
-# Force new instances into tabs
-macos-tabs-visibility = always
-
 # AI & Agent Optimization
 scrollback-limit = 100000000
 
 copy-on-select = true
 clipboard-paste-protection = true
+shell-integration-features = no-cursor
