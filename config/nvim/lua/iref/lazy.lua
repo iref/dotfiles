@@ -12,7 +12,14 @@ require("lazy").setup({
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate"
+    build = ":TSUpdate",
+    config = function()
+      require('nvim-treesitter').install {
+        "c", "elixir", "erlang", "html",  "java", "json", "kotlin", 
+        "javascript", "lua", "python", "typescript", "vim", "vimdoc",
+        "query"
+      }
+    end
   },
 
   -- Harpoon 2
@@ -29,16 +36,11 @@ require("lazy").setup({
   { "tpope/vim-fugitive" },
 
   -- LSP
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
-    }
-  },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+
+  -- Completion
+  { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "L3MON4D3/LuaSnip" },
 })
