@@ -10,6 +10,7 @@ zsh ./script/editors.sh
 
 # Symlink zsh config
 ln -sf $(pwd)/config/zsh/zshrc $HOME/.zshrc
+ln -sf $(pwd)/config/zsh/zshenv $HOME/.zshenv
 ln -sf $(pwd)/config/zsh/plugins.txt $HOME/.zsh_plugins.txt
 
 # Symlink git config

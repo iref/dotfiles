@@ -12,7 +12,7 @@ softwareupdate --install-rosetta
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install cli tools
-brew install git wget curl jq httpie asdf pinentry-mac
+brew install git wget curl jq httpie asdf pinentry-mac tree-sitter-cli
 
 # Modern terminal stack
 brew install --cask ghostty

@@ -1,0 +1,4 @@
+# Sourced for all zsh instances (including non-interactive).
+# Keep this minimal — only what every shell needs at startup.
+export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+export PATH="${ASDF_DATA_DIR}/shims:$PATH"
