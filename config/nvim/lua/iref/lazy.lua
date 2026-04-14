@@ -38,6 +38,7 @@ require("lazy").setup({
   -- LSP
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
+  { "neovim/nvim-lspconfig" },
 
   -- Completion
   { "hrsh7th/nvim-cmp" },
