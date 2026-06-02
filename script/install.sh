@@ -29,4 +29,12 @@ mkdir -p $HOME/.gnupg && chmod 700 $HOME/.gnupg
 ln -sf $(pwd)/config/gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 chmod 600 $HOME/.gnupg/gpg-agent.conf
 
+# Symlink Claude Code config
+mkdir -p $HOME/.claude
+ln -sf $(pwd)/config/claude/settings.json $HOME/.claude/settings.json
+
+# Symlink ccstatusline config
+mkdir -p $HOME/.config/ccstatusline
+ln -sf $(pwd)/config/ccstatusline/settings.json $HOME/.config/ccstatusline/settings.json
+
 echo "Good Job! Your dotfiles are set now"
